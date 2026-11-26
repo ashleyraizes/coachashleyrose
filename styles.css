@@ -156,7 +156,7 @@ h4 { font-size: 1.25rem; font-weight: 600; }
   border-top: 3px solid var(--sage);
 }
 .quote-grid .quote:nth-child(even) { border-top-color: var(--orange); }
-.quote-grid blockquote { font-size: 1rem; }
+.quote-grid blockquote { font-size: 1rem; color: var(--muted); }
 
 /* Contact */
 .contact-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 4rem; align-items: start; }
@@ -209,3 +209,5 @@ h4 { font-size: 1.25rem; font-weight: 600; }
 @media (max-width: 420px) {
   .brand span { font-size: 1.05rem; }
 }
+
+.quote-grid blockquote strong { font-weight: 600; color: var(--ink); background: linear-gradient(transparent 62%, rgba(226, 115, 58, .18) 62%); }
