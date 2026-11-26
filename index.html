@@ -230,7 +230,12 @@
           headers: { 'Accept': 'application/json' },
           body: new FormData(form)
         });
-        if (!res.ok) throw new Error();
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== 'true') {
+          status.textContent = data.message || 'Something went wrong. Please email me directly at ashleycareercoach@gmail.com.';
+          status.classList.add('error');
+          return;
+        }
         form.reset();
         status.textContent = "Thank you! Your message is on its way. I'll be in touch soon.";
         status.classList.add('success');
